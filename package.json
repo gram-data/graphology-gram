@@ -1,0 +1,63 @@
+{
+  "name": "@gram-data/graphology-gram",
+  "author": "Andreas Kollegger",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "browser": "dist/graphology-gram.umd.development.min.js",
+  "unpkg": "dist/graphology-gram.umd.production.min.js",
+  "module": "dist/graphology-gram.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build --format umd,esm,cjs --tsconfig tsconfig.build.json",
+    "test": "tsdx test",
+    "test:watch": "tsdx test --watch",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "size-limit": [
+    {
+      "path": "dist/graphology-gram.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/graphology-gram.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.9.2",
+    "graphology-types": "^0.19.2",
+    "husky": "^5.0.9",
+    "size-limit": "^4.9.2",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.1.0",
+    "typescript": "^4.1.5"
+  },
+  "dependencies": {
+    "@gram-data/gram": "^0.4.0-alpha.4",
+    "graphology": "^0.19.3"
+  }
+}
