@@ -1,7 +1,7 @@
 {
   "name": "@gram-data/graphology-gram",
   "author": "Andreas Kollegger",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "browser": "dist/graphology-gram.umd.development.min.js",
@@ -61,6 +61,9 @@
   "dependencies": {
     "@gram-data/gram": "^0.4.0-alpha.4",
     "graphology": "^0.19.3"
+  },
+  "publishConfig": {
+    "access": "public"
   },
 	"np": {
 		"yarn": false,
