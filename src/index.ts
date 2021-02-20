@@ -1,5 +1,8 @@
 import Graph, {MultiGraph} from 'graphology';
-import gram, {ast, ops, value} from '@gram-data/gram';
+import gram from '@gram-data/gram';
+import * as ast from '@gram-data/gram-ast';
+import * as ops from '@gram-data/gram-ops';
+import * as value from '@gram-data/gram-value';
 
 const MISSING_ID = "🤨";
 
@@ -57,6 +60,11 @@ const stringify = (graph:Graph) => {
     if (!stringifiedNodeKeys.has(key)) tokens.push(stringifyNode(key, attributes))
   })
   return tokens.join("\n");
+}
+
+export {
+  parse,
+  stringify
 }
 
 export default {

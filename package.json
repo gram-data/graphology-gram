@@ -17,11 +17,14 @@
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build --format umd,esm,cjs --tsconfig tsconfig.build.json",
+    "build": "run-s build:*",
+    "build:lib": "tsdx build --format umd,esm,cjs --tsconfig tsconfig.build.json",
+    "build:demo": "shx cp dist/*.umd.development.* node_modules/graphology/dist/graphology.umd.js public/",
+    "demo": "sirv public",
     "test": "tsdx test",
     "test:watch": "tsdx test --watch",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
+    "prepare": "npm run build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "release": "np"
@@ -53,13 +56,19 @@
     "graphology-types": "^0.19.2",
     "husky": "^5.0.9",
     "np": "^7.4.0",
+    "npm-run-all": "^4.1.5",
+    "shx": "^0.3.3",
+    "sirv-cli": "^1.0.11",
     "size-limit": "^4.9.2",
     "tsdx": "^0.14.1",
     "tslib": "^2.1.0",
     "typescript": "^4.1.5"
   },
   "dependencies": {
-    "@gram-data/gram": "^0.4.0-alpha.4",
+    "@gram-data/gram": "^0.4.0-alpha.8",
+    "@gram-data/gram-ast": "^0.4.0-alpha.8",
+    "@gram-data/gram-ops": "^0.4.0-alpha.8",
+    "@gram-data/gram-value": "^0.4.0-alpha.8",
     "graphology": "^0.19.3"
   },
   "publishConfig": {
