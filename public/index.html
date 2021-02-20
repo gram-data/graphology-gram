@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <h1>graphology-gram</h1>
+
+    <p>From an AST:</p>
+    <pre id="ast">parsed AST should appear here</pre>
+
+    <p>To prettified gram:</p>
+    <pre id="target">stringified gram should appear here</pre>
+
+    <script src="./graphology.umd.js" charset="utf-8"></script>
+    <script src="./graphology-gram.umd.development.js" charset="utf-8"></script>
+    <script>
+      window.onload = function () {
+        var src = "(a)-->(b)<--(c)";
+
+        // var target = gram.stringify(edge);
+        // document.getElementById('target').textContent = target;
+      }
+    </script>
+  </body>
+</html>
